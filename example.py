@@ -4,6 +4,7 @@ import os
 import cv2
 from matplotlib import pyplot as plt
 from mtcnn.mtcnn import MTCNN
+import database as db
 
 path = "C:/Users/Usuario/Desktop/ReconocimientoFacial"
 txt_login = "Iniciar Sesión"
@@ -173,7 +174,7 @@ def login_capture():
             comp = compatibility(face_reg, face_log)
             
             if comp >= 0.94:
-                print("{}Compatibilidad del {:.1%}{}".format(color_success, float(comp), color_normal))
+                print("{}Compatibilidad del {:.1%}{}".format(color_succes, float(comp), color_normal))
                 printAndShow(screen2, f"Bienvenido, {user_login}", 1)
             else:
                 print("{}Compatibilidad del {:.1%}{}".format(color_error, float(comp), color_normal))
